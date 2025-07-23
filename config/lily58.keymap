@@ -15,7 +15,7 @@
 
 
         default_layer {
-            display-name = "Base";
+            display-name = "Based";
             bindings = <
             // ----------------------- LEFT HAND ------------------------------------||--------------------------- RIGHT HAND ---------------------------
             // |  `  |  1  |  2  |  3  |  4  |  5  |                                 |  6  |  7  |  8  |  9  |  0  | BSPC |
@@ -27,50 +27,58 @@
             // |CAPS |  A  |  S  |  D  |  F  |  G  |                                 |  H  |  J  |  K  |  L  |  ;  |  '   |
                &kp CAPS &kp A &kp S &kp D &kp F &kp G                             &kp H &kp J &kp K &kp L &kp SEMI &kp SQT
         
-            // |CTRL |  Z  |  X  |  C  |  V  |  B  |  [  |  ]  |                     |  N  |  M  |  ,  |  .  |  /  |SHIFT |
-               &kp LCTRL &kp Z &kp X &kp C &kp V &kp B &kp LBKT &kp RBKT          &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp LSHFT
+            // |SHIFT |  Z  |  X  |  C  |  V  |  B  |  [  |  ]  |                     |  N  |  M  |  ,  |  .  |  /  |SHIFT |
+               &kp LSFT &kp Z &kp X &kp C &kp V &kp B &kp LBKT &kp RBKT          &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp LSHFT
         
-            //                        | GUI | ALT | LOWER| SPACE |     | SPACE| RAISE| GUI | ALT |
-                                       &kp LGUI &kp LALT &mo 1  &kp SPACE       &kp SPACE &mo 2  &kp RGUI &kp RALT
+            //                        | CTRL | ALT | LOWER| SPACE |     | SPACE| RAISE| GUI | ALT |
+                                       &kp CTRL &kp LALT &mo 1  &kp SPACE       &kp SPACE &mo 2  &kp RGUI &kp RALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-
+        
         lower_layer {
-// ------------------------------------------------------------------------------------------------------------
-// | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
-// |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
-// |   `   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   ~   |
-// |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
-//                     |      |      |      |        |  |       |      |       |       |
-            display-name = "Lower";
+            display-name = "Extra";
             bindings = <
-&bt BT_CLR &bt BT_SEL 0     &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3 &bt BT_SEL 4                 &trans    &trans    &trans          &trans    &trans    &trans
-&kp F1     &kp F2           &kp F3            &kp F4            &kp F5       &kp F6                       &kp F7    &kp F8    &kp F9          &kp F10   &kp F11   &kp F12
-&kp GRAVE  &kp EXCL         &kp AT            &kp HASH          &kp DOLLAR   &kp PRCNT                    &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &kp TILDE
-&trans     &trans           &trans            &trans            &trans       &trans    &trans   &trans    &trans    &kp MINUS &kp KP_PLUS     &kp LBRC  &kp RBRC  &kp PIPE
-                                              &trans            &trans       &trans    &trans   &trans    &trans    &trans    &trans
+            // ----------------------- LEFT HAND ------------------------------------||--------------------------- RIGHT HAND ---------------------------
+            // | F1  | F2  | F3  | F4  | F5  | F6  |                                 | F7  | F8  | F9  | F10 | F11 | F12  |
+               &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6                           &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
+        
+            // |  `  |     |     |     |     |     |                                 |     | Home| Up  | End |     |     |
+               &kp GRAVE &trans &trans &trans &trans &trans                          &trans &kp HOME &kp UP &kp END &trans &trans
+        
+            // |     |     |     |     |     |     |                                 |     |Left |Down |Right|PgUp |PgDn |
+               &trans &trans &trans &trans &trans &trans                          &trans &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &kp PG_DN
+        
+            // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
+               &bt BT_CLR &bt BT_SEL 0     &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3 &bt BT_SEL 4                 &trans    &trans    &trans          &trans    &trans    &trans
+        
+            //                        |     |     |      |       |       |       |     |     |
+                                       &trans &trans &trans &trans       &trans &trans &trans &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         raise_layer {
-// ------------------------------------------------------------------------------------------------------------
-// |       |     |     |      |      |      |                   |      |       |       |      |       |       |
-// |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
-// |   F1  |  F2 |  F3 |  F4  |  F5  |  F6  |                   |      |   <-  |   v   |  ^   |  ->   |       |
-// |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
-//                     |      |      |      |        |  |       |      |       |       |
-            display-name = "Raise";
+            display-name = "Multimedia";
             bindings = <
-&trans    &trans &trans &trans  &trans  &trans                       &trans      &trans    &trans    &trans   &trans    &trans
-&kp GRAVE &kp N1 &kp N2 &kp N3  &kp N4  &kp N5                       &kp N6      &kp N7    &kp N8    &kp N9   &kp N0    &trans
-&kp F1    &kp F2 &kp F3 &kp F4  &kp F5  &kp F6                       &trans      &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT &trans
-&kp F7    &kp F8 &kp F9 &kp F10 &kp F11 &kp F12   &trans   &trans    &kp KP_PLUS &kp MINUS &kp EQUAL &kp LBKT &kp RBKT  &kp BSLH
-                        &trans  &trans  &trans    &trans   &trans    &trans      &trans    &trans
+            // ----------------------- LEFT HAND ------------------------------------||--------------------------- RIGHT HAND ---------------------------
+            // |     |     |     |     |     |     |                                 |     |     |     |     |     |     |
+               &trans &trans &trans &trans &trans &trans                          &trans &trans &trans &trans &trans &trans
+        
+            // |     |     |     |     |     |     |                                 |     |     | ↑   |     |     |     |
+               &trans &trans &trans &trans &trans &trans                          &trans &trans &mkp UP &trans &trans &trans
+        
+            // |     |     |     |     |     |     |                                 |     | ←   | ↓   | →   |     |     |
+               &trans &trans &trans &trans &trans &trans                          &trans &mkp LEFT &mkp DOWN &mkp RIGHT &trans &trans
+        
+            // |WH← |WH→ |     |     |     |     |     |     |                       |BTN1 |WH↓ |WH↑ |BTN2 |     |     |
+               &mkp WH_LEFT &mkp WH_RIGHT &trans &trans &trans &trans &trans &trans &mkp BTN1 &mkp WH_DOWN &mkp WH_UP &mkp BTN2 &trans &trans
+        
+            //                        |     |     |      |       |       |       |     |     |
+                                       &trans &trans &trans &trans       &trans &trans &trans &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
