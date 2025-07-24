@@ -28,8 +28,8 @@
             // |SHIFT |  A  |  S  |  D  |  F  |  G  |                                 |  H  |  J  |  K  |  L  |  ;  |  '   |
                &kp LSFT &kp A &kp S &kp D &kp F &kp G                             &kp H &kp J &kp K &kp L &kp SEMI &kp SQT
         
-            // |CTRL |  Z  |  X  |  C  |  V  |  B  |  [  |  ]  |                     |  N  |  M  |  ,  |  .  |  /  |CTRL |
-               &kp LCTRL &kp Z &kp X &kp C &kp V &kp B &kp LBKT &kp RBKT          &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp RCTRL
+            // |CTRL |  Z  |  X  |  C  |  V  |  B  |  [  |  ]  |                     |  N  |  M  |  ,  |  .  |  /  |DEL |
+               &kp LCTRL &kp Z &kp X &kp C &kp V &kp B &kp LBKT &kp RBKT          &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp DEL
         
             //                        | LGUI | ALT | LOWER| ENTER |     | SPACE| RAISE| PG_UP | PG_UP |
                                        &kp LGUI &kp LALT &mo 1  &kp RET       &kp SPACE &mo 2  &kp PG_UP &kp PG_DN
