@@ -31,8 +31,8 @@
             // |CTRL |  Z  |  X  |  C  |  V  |  B  |  [  |  ]  |                     |  N  |  M  |  ,  |  .  |  /  |CTRL |
                &kp LCTRL &kp Z &kp X &kp C &kp V &kp B &kp LBKT &kp RBKT          &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp RCTRL
         
-            //                        | LGUI | ALT | LOWER| SPACE |     | SPACE| RAISE| PG_UP | PG_UP |
-                                       &kp LGUI &kp LALT &mo 1  &kp SPACE       &kp SPACE &mo 2  &kp PG_UP &kp PG_DN
+            //                        | LGUI | ALT | LOWER| ENTER |     | SPACE| RAISE| PG_UP | PG_UP |
+                                       &kp LGUI &kp LALT &mo 1  &kp RET       &kp SPACE &mo 2  &kp PG_UP &kp PG_DN
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
