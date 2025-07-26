@@ -25,7 +25,7 @@
             // | CAPS  |  A  |  S  |  D  |  F  |  G  |                                 |  H  |  J  |  K  |  L  |  ;  |  '   |
                &kp CAPS &kp A &kp S &kp D &kp F &kp G                             &kp H &kp J &kp K &kp L &kp SEMI &kp SQT
         
-            // | SHIFT |  Z  |  X  |  C  |  V  |  B  |  [  |  ]  |                     |  N  |  M  |  ,  |  .  |  /  |DEL |
+            // | SHIFT |  Z  |  X  |  C  |  V  |  B  |  [  |  ]  |                     |  N  |  M  |  ,  |  .  |  /  |DEL |   
                &kp LSFT &kp Z &kp X &kp C &kp V &kp B &kp LBKT &kp RBKT          &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp DEL
 
             // |  CTRL  |  1  |  2  |  3  |  4  |  5  |                                 |  6  |  7  |  8  |  9  |  0  | BSPC |
@@ -68,12 +68,12 @@
             display-name = "Expand";
             bindings = <
 
-// ----------------------- LEFT HAND -------------------||--------------------------- RIGHT HAND ---------------------------
-// |       |     |     |      |      |        |                     |        |          |          |        |         |  F12    |
-&trans &trans &trans &trans  &trans  &trans                       &trans &trans &trans &trans &trans &kp F12
+// ----------------------- LEFT HAND -----------||--------------------------- RIGHT HAND ---------------------------
+// |  |       |       |       |       |         ||        |        |       |       |       |  F12    |
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &kp F12
 
-// |       |     |     |      |      |        |                     |        |          |          |        |         |     `    |
-&kp INSERT &trans &trans &trans &trans  &trans  &trans                       &trans &trans &trans &trans &trans
+// | `    |      |      |       |      |        ||        |      |      |      |      |      |
+&kp INSERT &trans &trans &trans &trans  &trans      &trans &trans &trans &trans &trans &trans
 
 // | BT1   | BT2 | BT3 |  BT4 |  BT5 |  BTCLR |                   |      |       |       |      |       |       |
 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR                       &trans      &trans    &trans    &trans   &trans    &trans
