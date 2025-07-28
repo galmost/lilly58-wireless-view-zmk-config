@@ -1,6 +1,3 @@
-Of course. I have updated the keymap to use consistent 4-space indentation and reverted the extra_3 layer status back to "reserved".
-Here is the fully normalized code.
-Normalized Lily58 Keymap
 /*
  * Copyright (c) 2020 The ZMK Contributors
  *
