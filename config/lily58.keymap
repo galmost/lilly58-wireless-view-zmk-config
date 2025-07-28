@@ -111,7 +111,15 @@
         };
 
         extra_2 {
-            status = "reserved";
+            display-name = "EXT2";
+            bindings = <
+               &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans
+               &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans
+               &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans
+                          &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans
+                                 &trans &trans &trans           &trans &trans &trans
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         extra_3 {
