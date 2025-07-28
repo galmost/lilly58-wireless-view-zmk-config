@@ -96,7 +96,7 @@
 
         // This layer is disabled.
         extra_3 {
-            status = "disabled";
+            status = "reserved";
         };
     };
 };
