@@ -53,25 +53,19 @@
         };
 
         raise_layer {
-            
-            display-name = "Expand";
+            display-name = "Expand (Raise)";
             bindings = <
-
-// ----------------------- LEFT HAND -----------||--------------------------- RIGHT HAND ---------------------------
-// |  |       |       |       |       |         ||        |        |       |       |       |  F12    |
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &kp F12
-
-// | `    |      |      |       |      |        ||        |      |      |      |      |      |
-&kp INSERT &trans &trans &trans &trans  &trans      &trans &trans &trans &trans &trans &trans
-
-// | BT1   | BT2 | BT3 |  BT4 |  BT5 |  BTCLR |                   |      |       |       |      |       |       |
-&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR                       &trans      &trans    &trans    &trans   &trans    &trans
-
-// |Vol_UP|Vol_DN|Mute |Play/Pause|Previous|Next|      |  |       |      |       |       |      |       |       |
-&kp C_VOL_UP &kp C_VOL_DN &kp C_MUTE &kp C_PLAY_PAUSE  &kp C_PREV  &kp C_NEXT   &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
-
-//                     |      |      |        |        |  |       |      |       |       |
-&trans  &trans  &trans    &trans   &trans    &trans      &trans    &trans
+            //----------------------------------------------------------------------------------------------------------------------------------------------------
+            // | TRNS| TRNS | TRNS | TRNS | TRNS | TRNS |                    | TRNS | TRNS | TRNS | TRNS | F11   | F12   |
+               &trans     &trans     &trans     &trans     &trans     &trans                        &trans     &trans     &trans     &trans     &kp F11    &kp F12
+            // | TRNS| TRNS | TRNS | TRNS | TRNS | TRNS |                    | TRNS | TRNS | TRNS | TRNS | TRNS  | TRNS  |
+               &trans     &trans     &trans     &trans     &trans     &trans                        &trans     &trans     &trans     &trans     &trans     &trans
+            // | BT 1| BT 2 | BT 3 | BT 4 | BT 5 | BT CLR|                    | TRNS | TRNS | TRNS | TRNS | TRNS  | TRNS  |
+               &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR          &trans     &trans     &trans     &trans     &trans     &trans
+            // | VOLU| VOLD | MUTE | PLAY | PREV |                              | TRNS | TRNS | TRNS | TRNS | \ |
+                                &kp C_VOL_UP &kp C_VOL_DN &kp C_MUTE &kp C_PLAY_PAUSE &kp C_PREV    &trans     &trans     &trans     &trans     &kp BSLH
+            // | TRNS| TRNS | TRNS |                              |  TRNS  | TRNS  | TRNS  |
+                                                &trans     &trans     &trans                        &trans     &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
