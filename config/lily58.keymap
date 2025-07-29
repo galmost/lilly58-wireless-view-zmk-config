@@ -38,7 +38,7 @@
             bindings = <
             //----------------------------------------------------------------------------------------------------------------------------------------------------
             // | ESC |  F1   |  F2   |  F3   |  F4   |  F5   |                    |  F6   |  F7   |  F8   |  F9   |  F10  |  DEL  |
-               &kp ESC    &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                        &kp F6     &kp F7     &kp F8     &kp F9     &kp F10    &kp DEL
+               &kp ESCAPE    &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                        &kp F6     &kp F7     &kp F8     &kp F9     &kp F10    &kp DEL
             // |  `  |   !   |   @   |   #   |   $   |   %   |                    |   ^   |   &   |   * |   (   |   )   |  INS  |
                &kp GRAVE  &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT                     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR   &kp INS
             // | TRNS|  _    |  +    |  {    |  }    |  |    |                    |  UP   | PG_UP |PG_DOWN|  PSCRN| SCRLK | PAUSE |
