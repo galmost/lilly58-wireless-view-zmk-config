@@ -10,7 +10,6 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 / {
-    keymap {
     behaviors {
         td_1_f1: tap_dance_1_f1 {
             compatible = "zmk,behavior-tap-dance";
@@ -108,6 +107,8 @@
             bindings = <&kp EQUAL>, <&kp F12>;
         };
     };
+
+    keymap {
 
         compatible = "zmk,keymap";
 
