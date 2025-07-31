@@ -11,8 +11,105 @@
 
 / {
     keymap {
-        compatible = "zmk,keymap";
+    behaviors {
+        td_1_f1: tap_dance_1_f1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_1_F1";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N1>, <&kp F1>;
+        };
+        
+        td_2_f2: tap_dance_2_f2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_2_F2";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N2>, <&kp F2>;
+        };
+        
+        td_3_f3: tap_dance_3_f3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_3_F3";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N3>, <&kp F3>;
+        };
+        
+        td_4_f4: tap_dance_4_f4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_4_F4";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N4>, <&kp F4>;
+        };
+        
+        td_5_f5: tap_dance_5_f5 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_5_F5";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N5>, <&kp F5>;
+        };
+        
+        td_6_f6: tap_dance_6_f6 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_6_F6";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N6>, <&kp F6>;
+        };
+        
+        td_7_f7: tap_dance_7_f7 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_7_F7";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N7>, <&kp F7>;
+        };
+        
+        td_8_f8: tap_dance_8_f8 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_8_F8";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N8>, <&kp F8>;
+        };
+        
+        td_9_f9: tap_dance_9_f9 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_9_F9";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N9>, <&kp F9>;
+        };
+        
+        td_0_f10: tap_dance_0_f10 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0_F10";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N0>, <&kp F10>;
+        };
+        
+        td_minus_f11: tap_dance_minus_f11 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_MINUS_F11";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp MINUS>, <&kp F11>;
+        };
+        
+        td_equal_f12: tap_dance_equal_f12 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_EQUAL_F12";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp EQUAL>, <&kp F12>;
+        };
+    };
 
+        compatible = "zmk,keymap";
 
         default_layer {
             display-name = "Based";
@@ -21,7 +118,7 @@
 
             // ----------------------- LEFT HAND ------------------------------------||--------------------------- RIGHT HAND ---------------------------
             // |  `  |  1  |  2  |  3  |  4  |  5  |                                 |  6  |  7  |  8  |  9  |  0  | BACKSPACE |
-            &kp INSERT &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                        &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSPC
+            &mt INSERT &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                        &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSPC
 
             // | TAB |  Q  |  W  |  E  |  R  |  T  |                                 |  Y  |  U  |  I  |  O  |  P  | PG_UP  |
             &kp TAB &kp Q &kp W &kp E &kp R &kp T                              &kp Y &kp U &kp I &kp O &kp P &kp PG_UP
