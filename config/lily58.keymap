@@ -16,7 +16,7 @@
             label = "TAP_DANCE_INS_ESC";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp ESCAPE>, <&kp INSERT>;
+            bindings = <&kp ESCAPE>, <&kp GRAVE>;
         };
 
         td_1_f1: tap_dance_1_f1 {
@@ -127,7 +127,7 @@
 
             // ----------------------- LEFT HAND ------------------------------------||--------------------------- RIGHT HAND ---------------------------
             // |  ESCAPE  |  1  |  2  |  3  |  4  |  5  |                                 |  6  |  7  |  8  |  9  |  0  | BACKSPACE |
-            &td_ins_esc &td_1_f1 &td_2_f2 &td_3_f3 &td_4_f4 &td_5_f5                        &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSPC
+            &td_ins_esc &td_1_f1 &td_2_f2 &td_3_f3 &td_4_f4 &td_5_f5                        &tap_dance_6_f6 &td_7_f7 &td_8_f8 &td_9_f9 &td_0_f10 &kp BSPC
 
             // | TAB |  Q  |  W  |  E  |  R  |  T  |                                 |  Y  |  U  |  I  |  O  |  P  | PG_UP  |
             &kp TAB &kp Q &kp W &kp E &kp R &kp T                              &kp Y &kp U &kp I &kp O &kp P &kp PG_UP
