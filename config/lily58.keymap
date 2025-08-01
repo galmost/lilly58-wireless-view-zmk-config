@@ -120,7 +120,6 @@
             bindings = <&kp EQUAL>, <&kp F12>;
         };
 
-        // FIXED: Proper naming convention
         td_tab_caps: tap_dance_tab_caps {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_TAB_CAPS";
@@ -162,7 +161,7 @@
             // |  SHIFT   |   A    |   S    |   D    |   F    |   G    |                               |   H    |   J    |   K    |   L    |   ;    |   ENTER   |  
                &kp LSFT   &kp A    &kp S    &kp D    &kp F    &kp G                                   &kp H    &kp J    &kp K    &kp L    &kp SEMI &kp RET
         
-            // |  CTRL    |   Z    |   X    |   C    |   V    |   B    |  [/-   |  ]/=   |            |   N    |   M    |   ,    |   .    |   /    |  PG_DN    |
+            // |  CTRL    |   Z    |   X    |   C    |   V    |   B    |  [ / -   |  ] / =   |            |   N    |   M    |   ,    |   .    |   /    |  PG_DN    |
                &kp LCTRL  &kp Z    &kp X    &kp C    &kp V    &kp B    &td_lbkt_minus &td_rbkt_equal &kp N    &kp M    &kp COMMA &kp DOT &kp FSLH &kp PG_DN
         
             //                            |  LGUI  |  ALT   | HIGH   | SPACE  |     | ENTER  | RIGHT  | LAYER3 | MMEDIA |
@@ -245,8 +244,8 @@
             display-name = "BaseRight";
             bindings = <
             // ----------------------- LEFT HAND -------------------------------||--------------------------- RIGHT HAND ---------------------------
-            // |  TRANS   | TRANS  | TRANS  | TRANS  | TRANS  |               |                          | TRANS  | TRANS  | TRANS  | TRANS  |   -    |    =      |
-               &trans    &trans   &trans   &trans   &trans                                              &trans   &trans   &trans   &trans   &kp MINUS &kp EQUAL
+            // |  TRANS   | TRANS  | TRANS  | TRANS  | TRANS  |               |                          | TRANS  | TRANS  | TRANS  | TRANS  |   -/F11   |    =/F12      |
+               &trans    &trans   &trans   &trans   &trans                                              &trans   &trans   &trans   &trans   &td_minus_f11 &td_equal_f12
 
             // |  TRANS   | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |                               | TRANS  | TRANS  | TRANS  | TRANS  |   [    |    ]      |
                &trans    &trans   &trans   &trans   &trans   &trans                                    &trans   &trans   &trans   &trans   &kp LBKT &kp RBKT
