@@ -245,17 +245,17 @@
             display-name = "BRight";
             bindings = <
             // ----------------------- LEFT HAND -------------------------------||--------------------------- RIGHT HAND ---------------------------
-            // |  TRANS   | TRANS  | TRANS  | TRANS  | TRANS  |               |                        | TRANS  | TRANS  | TRANS  | TRANS  |   -/F11   |    =/F12      |
+            // |  TRANS   | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |                               | TRANS  | TRANS  | TRANS  | TRANS  |   -/F11   |    =/F12      |
                &trans    &trans   &trans   &trans   &trans   &trans                                     &trans   &trans   &trans   &trans   &td_minus_f11 &td_equal_f12
 
             // |  TRANS   | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |                               | TRANS  | TRANS  | TRANS  | TRANS  |   [    |    ]      |
                &trans    &trans   &trans   &trans   &trans   &trans                                     &trans   &trans   &trans   &trans   &kp LBKT &kp RBKT
 
-            // | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |                               | TRANS  | TRANS  | TRANS  | TRANS  |   '    |    \      |
-               &trans   &trans   &trans   &trans   &trans   &trans                            &trans   &trans   &trans   &trans   &kp SQT  &kp BSLH
+            // |  TRANS   | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |                               | TRANS  | TRANS  | TRANS  | TRANS  |   '    |    \      |
+               &trans    &trans   &trans   &trans   &trans   &trans                                     &trans   &trans   &trans   &trans   &kp SQT  &kp BSLH
 
-            // | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |            | TRANS  | TRANS  | TRANS  | TRANS  |   .    |    /      |
-               &trans   &trans   &trans   &trans   &trans   &trans   &trans                &trans   &trans   &trans   &trans   &kp DOT  &kp FSLH
+            // |  TRANS   | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |            | TRANS  | TRANS  | TRANS  | TRANS  |   .    |    /      |
+               &trans    &trans   &trans   &trans   &trans   &trans   &trans   &trans                &trans   &trans   &trans   &trans   &kp DOT  &kp FSLH
 
             //                            | TRANS  | TRANS  | TRANS  | TRANS  |     | TRANS  | TRANS  | TRANS  | TRANS  |
                                          &trans   &trans   &trans   &trans         &trans   &trans   &trans   &trans
