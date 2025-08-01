@@ -219,20 +219,20 @@
         };
 
         layer_3 {
-            display-name = "MuMedia";
+            display-name = "Multimedia";
             bindings = <
             // ----------------------- LEFT HAND -------------------------------||--------------------------- RIGHT HAND ---------------------------
             // |  TRANS   | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |                               | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |  TRANS    |
                &trans    &trans   &trans   &trans   &trans   &trans                                    &trans   &trans   &trans   &trans   &trans   &trans
 
-            // |  TRANS   | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |                               | TRANS  | TRANS  | LEFT CLICK  | MMOVE UP  | RIGHT CLICK  |  TRANS    |
-               &trans    &trans   &trans   &trans   &trans   &trans                                    &trans   &trans   &mkp LCLK   &mmv MOVE_UP   &mkp RCLK   &trans
+            // |  TRANS   | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |                               | TRANS  | TRANS  | LEFT CLICK  | MMOVE UP  | RIGHT CLICK  |  SCROLL UP    |
+               &trans    &trans   &trans   &trans   &trans   &trans                                    &trans   &trans   &mkp LCLK   &mmv MOVE_UP   &mkp RCLK   &msc SCRL_UP
 
-            // |   BT1    |  BT2   |  BT3   |  BT4   |  BT5   | BTCLR  |                               | TRANS  | TRANS  | MOVE LEFT  | MOVE DOWN  | MOVE RIGHT  |  TRANS    |
-               &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR          &trans   &trans   &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &trans
+            // |   BT1    |  BT2   |  BT3   |  BT4   |  BT5   | BTCLR  |                               | TRANS  | TRANS  | MOVE LEFT  | MOVE DOWN  | MOVE RIGHT  |  MIDDLE CLICK    |
+               &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR          &trans   &trans   &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &mkp MCLK
 
-            // |  VOL_UP  | VOL_DN | MUTE   |PLY/PAUS| PREV   | NEXT   | TRANS  | TRANS  |            | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |  TRANS    |
-               &kp C_VOL_UP &kp C_VOL_DN &kp C_MUTE &kp C_PLAY_PAUSE &kp C_PREV &kp C_NEXT &trans &trans &trans   &trans   &trans   &trans   &trans   &trans
+            // |  VOL_UP  | VOL_DN | MUTE   |PLY/PAUS| PREV   | NEXT   | TRANS  | TRANS  |            | TRANS  | TRANS  | SCROLL LEFT  | MIDDLE CLICK  | SCROLL RIGHT  |  SCROLL DOWN    |
+               &kp C_VOL_UP &kp C_VOL_DN &kp C_MUTE &kp C_PLAY_PAUSE &kp C_PREV &kp C_NEXT &trans &trans &trans   &trans   &msc SCRL_LEFT   &mkp MCLK   &msc SCRL_RIGHT   &msc SCRL_DOWN
 
             //                            | TRANS  | TRANS  | TRANS  | TRANS  |     | TRANS  | TRANS  | TRANS  | TRANS  |
                                          &trans   &trans   &trans   &trans         &trans   &trans   &trans   &trans
