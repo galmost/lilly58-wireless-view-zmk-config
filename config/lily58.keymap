@@ -114,6 +114,31 @@
             tapping-term-ms = <200>;
             bindings = <&kp EQUAL>, <&kp F12>;
         };
+
+       td_tab_caps: tap_dance_tab_caps {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_TAB_CAPS";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp TAB>, <&kp CAPS>;
+        };
+
+        td_lbkt_minus: tap_dance_lbkt_minus {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_LBKT_MINUS";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LBKT>, <&kp MINUS>;
+        };
+        
+        td_rbkt_equal: tap_dance_rbkt_equal {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_RBKT_EQUAL";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp RBKT>, <&kp EQUAL>;
+        };
+
     };
 
     keymap {
@@ -124,20 +149,20 @@
             display-name = "Based";
             bindings = <
             // ----------------------- LEFT HAND -------------------------------||--------------------------- RIGHT HAND ---------------------------
-            // | INS/ESC  |  1/F1  |  2/F2  |  3/F3  |  4/F4  |  5/F5  |                                 |   6    |   7    |   8    |   9    |   0    | BACKSPACE |
+            // | INS/ESC  |  1/F1  |  2/F2  |  3/F3  |  4/F4  |  5/F5  |                                 |  6/F6  |  7/F7  |  8/F8  |  9/F9  | 0/F10  | BACKSPACE |
                &td_isn_esc &td_1_f1 &td_2_f2 &td_3_f3 &td_4_f4 &td_5_f5                                  &tap_dance_6_f6  &tap_dance_7_f7   &tap_dance_8_f8   &tap_dance_9_f9   &&tap_dance_0_f10   &kp BSPC
 
-            // |   TAB    |   Q    |   W    |   E    |   R    |   T    |                                 |   Y    |   U    |   I    |   O    |   P    |  PG_UP    |
-               &kp TAB    &kp Q    &kp W    &kp E    &kp R    &kp T                                     &kp Y    &kp U    &kp I    &kp O    &kp P    &kp PG_UP
+            // |   TAB             |   Q    |   W    |   E    |   R    |   T    |                                 |   Y    |   U    |   I    |   O    |   P    |  PG_UP    |
+               &tap_dance_tab_caps    &kp Q    &kp W    &kp E    &kp R    &kp T                                     &kp Y    &kp U    &kp I    &kp O    &kp P    &kp PG_UP
         
             // |  SHIFT   |   A    |   S    |   D    |   F    |   G    |                                 |   H    |   J    |   K    |   L    |   ;    |   ENTER   |  
                &kp LSFT   &kp A    &kp S    &kp D    &kp F    &kp G                                     &kp H    &kp J    &kp K    &kp L    &kp SEMI &kp RET
         
             // |  CTRL    |   Z    |   X    |   C    |   V    |   B    |   [    |   ]    |            |   N    |   M    |   ,    |   .    |   /    |  PG_DN    |
-               &kp LCTRL  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp LBKT &kp RBKT             &kp N    &kp M    &kp COMMA &kp DOT &kp FSLH &kp PG_DN
+               &kp LCTRL  &kp Z    &kp X    &kp C    &kp V    &kp B    &td_lbkt_minus &td_rbkt_equal             &kp N    &kp M    &kp COMMA &kp DOT &kp FSLH &kp PG_DN
         
-            //                              |  LGUI  |  ALT   | HIGH   | SPACE  |     | SPACE  | RIGHT  | RALT | MMEDIA |
-                                           &kp LGUI &kp LALT &mo 1    &kp SPACE     &kp SPACE &mo 2    &kp RALT    &mo 4
+            //                            |  LGUI  |  ALT   | HIGH   | SPACE  |     | ENTER  | RIGHT  | MMEDIA | RIGHT |
+                                           &kp LGUI &kp LALT &mo 1    &kp SPACE     &kp RET    &mo 2    &mo 3    &mo 4
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -147,40 +172,17 @@
             display-name = "Horizon";
             bindings = <
                // ----------------------- LEFT HAND -------------------------------||--------------------------- RIGHT HAND ---------------------------
-               // | INSERT   |   F1   |   F2   |   F3   |   F4   |   F5   |                               |   F6   |   F7   |   F8   |   F9   |   F10  |  TRANS    |
-                  &kp INSERT &kp F1   &kp F2   &kp F3   &kp F4   &kp F5                                   &kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans
+               // | ESCAPE   |   F1   |   F2   |   F3   |   F4   |   F5   |                               |   F6   |   F7   |   F8   |   F9   |   F10  |  TRANS    |
+                  &kp ESCAPE &kp F1   &kp F2   &kp F3   &kp F4   &kp F5                                   &kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans
 
-            // | ESCAPE   |   1    |   2    |   3    |   4    |   5    |                               |   6    |   7    |   8    |   9    |   0    |    \      |
-               &kp ESCAPE &kp N1   &kp N2   &kp N3   &kp N4   &kp N5                                   &kp N6   &kp N7   &kp N8   &kp N9   &kp N0   &kp BSLH
+            // | INSERT   |   1    |   2    |   3    |   4    |   5    |                               |   6    |   7    |   8    |   9    |   0    |    \      |
+               &kp INSERT &kp N1   &kp N2   &kp N3   &kp N4   &kp N5                                   &kp N6   &kp N7   &kp N8   &kp N9   &kp N0   &kp BSLH
 
             // |  CAPS    |   Q    |   W    |   E    |   R    |   T    |                               |   Y    |   U    |   I    |   O    |   P    |  ENTER    |
                &kp CAPS   &kp Q    &kp W    &kp E    &kp R    &kp T                                    &kp Y    &kp U    &kp I    &kp O    &kp P    &kp RET
 
             // |  HOME    |  END   | TRANS  | TRANS  | TRANS  | TRANS  |   -    |   +    |            | TRANS  |  LEFT  |  DOWN  |   UP   | RIGHT  |  TRANS    |
                &kp HOME   &kp END  &trans   &trans   &trans   &trans   &kp MINUS &kp KP_PLUS           &trans   &kp LEFT &kp DOWN &kp UP   &kp RIGHT &trans
-
-            //                              | TRANS  | TRANS  | TRANS  | TRANS  |     | TRANS  | TRANS  | TRANS  | TRANS  |
-                                           &trans   &trans   &trans   &trans         &trans   &trans   &trans   &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
-
-        right_layer {
-            display-name = "BaseR";
-            bindings = <
-            // ----------------------- LEFT HAND -------------------------------||--------------------------- RIGHT HAND --------------------------- []'\./
-            // |    2     |   3    |   4    |   5    |   6    |               |                          |   7    |   8    |   9    |   0    |   -    |    =      |
-               &kp N2     &kp N3   &kp N4   &kp N5   &kp N6                                              &kp N7   &kp N8   &kp N9   &kp N0   &kp MINUS &kp KP_EQUAL
-
-            // |  TRANS   | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |                               | TRANS  | TRANS  | TRANS  | TRANS  | [  |  ]    |
-               &trans     &trans   &trans   &trans   &trans   &trans                                    &trans   &trans   &trans   &trans   &kp LBKT   &kp RBKT
-
-            // |  TRANS   | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |                               | TRANS  | TRANS  | TRANS  | TRANS  | '  |  \    |
-               &trans     &trans   &trans   &trans   &trans   &trans                                    &trans   &trans   &trans   &trans   &kp SQT   &kp BLSH
-
-            // |  TRANS   | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |            | TRANS  | TRANS  | TRANS  | TRANS  | .  |  /    |
-               &trans     &trans   &trans   &trans   &trans   &trans   &trans   &trans                &trans   &trans   &trans   &trans   &kp DOT   &kp FLSH
 
             //                              | TRANS  | TRANS  | TRANS  | TRANS  |     | TRANS  | TRANS  | TRANS  | TRANS  |
                                            &trans   &trans   &trans   &trans         &trans   &trans   &trans   &trans
@@ -204,6 +206,29 @@
 
             // |  VOL_UP  | VOL_DN | MUTE   |PLY/PAUS| PREV   | NEXT   | TRANS  | TRANS  |            | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |  TRANS    |
                &kp C_VOL_UP &kp C_VOL_DN &kp C_MUTE &kp C_PLAY_PAUSE &kp C_PREV &kp C_NEXT &trans &trans  &trans   &trans   &trans   &trans   &trans   &trans
+
+            //                              | TRANS  | TRANS  | TRANS  | TRANS  |     | TRANS  | TRANS  | TRANS  | TRANS  |
+                                           &trans   &trans   &trans   &trans         &trans   &trans   &trans   &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        right_layer {
+            display-name = "BaseRight";
+            bindings = <
+            // ----------------------- LEFT HAND -------------------------------||--------------------------- RIGHT HAND ---------------------------
+            // |  TRANS    | TRANS | TRANS  | TRANS  | TRANS  |               |                          | TRANS  | TRANS  | TRANS  | TRANS  |   -    |    =      |
+               &trans     &trans   &trans   &trans   &trans                                              &trans   &trans   &trans   &trans   &kp MINUS &kp KP_EQUAL
+
+            // |  TRANS   | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |                               | TRANS  | TRANS  | TRANS  | TRANS  | [  |  ]    |
+               &trans     &trans   &trans   &trans   &trans   &trans                                    &trans   &trans   &trans   &trans   &kp LBKT   &kp RBKT
+
+            // |  TRANS   | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |                               | TRANS  | TRANS  | TRANS  | TRANS  | '  |  \    |
+               &trans     &trans   &trans   &trans   &trans   &trans                                    &trans   &trans   &trans   &trans   &kp SQT   &kp BLSH
+
+            // |  TRANS   | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |            | TRANS  | TRANS  | TRANS  | TRANS  | .  |  /    |
+               &trans     &trans   &trans   &trans   &trans   &trans   &trans   &trans                &trans   &trans   &trans   &trans   &kp DOT   &kp FLSH
 
             //                              | TRANS  | TRANS  | TRANS  | TRANS  |     | TRANS  | TRANS  | TRANS  | TRANS  |
                                            &trans   &trans   &trans   &trans         &trans   &trans   &trans   &trans
